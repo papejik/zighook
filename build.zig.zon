@@ -1,0 +1,15 @@
+.{
+    .name = .zighook,
+    .version = "0.1.0",
+    .minimum_zig_version = "0.17.0-dev",
+    .fingerprint = 0x5481399db8ddc31f,
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+        "examples",
+        "README.md",
+        "LICENSE",
+    },
+    .dependencies = .{},
+}

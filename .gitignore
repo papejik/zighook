@@ -1,0 +1,10 @@
+.zig-cache/
+zig-out/
+*.dll
+*.pdb
+*.lib
+*.exe
+*.o
+*.obj
+.idea/
+*.iml
