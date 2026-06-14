@@ -26,7 +26,7 @@ pub fn allocExecNear(near: usize, size: usize) Error![]align(std.heap.page_size_
             const candidate = std.mem.alignForward(usize, @max(info.base, lo), granularity);
             if (candidate >= lo and candidate < hi and candidate + size <= region_end) {
                 if (VirtualAlloc(@ptrFromInt(candidate), size, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE)) |p| {
-                    const ptr: [*]align(std.heap.page_size_min) u8 = @alignCast(@ptrCast(p));
+                    const ptr: [*]align(std.heap.page_size_min) u8 = @ptrCast(@alignCast(p));
                     return ptr[0..size];
                 }
             }

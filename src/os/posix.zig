@@ -56,9 +56,8 @@ fn setProt(base: usize, len: usize, write: bool, exec: bool) Error!void {
     switch (builtin.os.tag) {
         .linux => {
             const prot: std.os.linux.PROT = .{ .READ = true, .WRITE = write, .EXEC = exec };
-            if (std.os.linux.E.init(std.os.linux.mprotect(@ptrFromInt(base), len, prot)) != .SUCCESS) {
-                return Error.ProtectFailed;
-            }
+            const rc = std.os.linux.mprotect(@ptrFromInt(base), len, prot);
+            if (std.os.linux.errno(rc) != .SUCCESS) return Error.ProtectFailed;
         },
         else => {
             const prot: std.c.PROT = .{ .READ = true, .WRITE = write, .EXEC = exec };

@@ -1,5 +1,9 @@
 # zighook
 
+[![CI](https://github.com/papejik/zighook/actions/workflows/ci.yml/badge.svg)](https://github.com/papejik/zighook/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Zig](https://img.shields.io/badge/zig-nightly-f7a41d.svg)](https://ziglang.org)
+
 Runtime function hooking for Zig - inline detours and vtable swaps with a
 type-safe, comptime API. A spiritual port of [MinHook] / [Microsoft Detours] /
 [detour-rs], built to be a clean Zig citizen: **zero dependencies, pure `std`.**
@@ -117,4 +121,6 @@ zig build examples   # build runnable examples into zig-out/bin
 
 [MinHook]: https://github.com/TsudaKageyu/minhook
 [Microsoft Detours]: https://github.com/microsoft/Detours
+[Detours]: https://github.com/microsoft/Detours
 [detour-rs]: https://github.com/darfink/detour-rs
+[zigzag]: https://github.com/uniboi/zigzag
